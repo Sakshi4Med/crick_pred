@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T20 Score Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #181818;
+            color: #ffffff;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #242424;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+            color: #f39c12;
+        }
+        form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+            gap: 20px; /* Spacing between rows and columns */
+            justify-content: center;
+        }
+        label {
+            font-size: 1em;
+            font-weight: bold;
+            color: #ecf0f1;
+            text-align: center;
+        }
+        select, input {
+            width: 100%;
+            max-width: 300px; /* Equal input widths */
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #7f8c8d;
+            background-color: #34495e;
+            color: #ecf0f1;
+            font-size: 0.95em;
+        }
+        select:focus, input:focus {
+            outline: none;
+            border-color: #f39c12;
+            box-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
+        }
+        button {
+            grid-column: span 2; /* Button spans across both columns */
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #f39c12, #e74c3c);
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.5);
+        }
+        @media (max-width: 768px) {
+            form {
+                grid-template-columns: 1fr; /* Single column layout for small screens */
+            }
+            button {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>T20 Score Predictor</h1>
+        <form action="/predict" method="POST">
+            <div>
+                <label for="batting_team">Select Batting Team:</label>
+                <select name="batting_team" required>
+                    {% for team in teams %}
+                        <option value="{{ team }}">{{ team }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="bowling_team">Select Bowling Team:</label>
+                <select name="bowling_team" required>
+                    {% for team in teams %}
+                        <option value="{{ team }}">{{ team }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="stadium">Select Stadium:</label>
+                <select name="stadium" required>
+                    {% for stadium in stadiums %}
+                        <option value="{{ stadium }}">{{ stadium }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="current_score">Current Score:</label>
+                <input type="number" name="current_score" min="0" required>
+            </div>
+            <div>
+                <label for="overs">Overs Done:</label>
+                <input type="number" name="overs" min="0" max="20" step="0.1" required>
+            </div>
+            <div>
+                <label for="wickets">Wickets Out:</label>
+                <input type="number" name="wickets" min="0" max="10" required>
+            </div>
+            <div style="grid-column: span 2; text-align: center;">
+                <label for="last_five">Runs in Last 5 Overs:</label>
+                <input type="number" name="last_five" min="0" required style="max-width: 300px;">
+            </div>
+            <button type="submit">Predict Score</button>
+        </form>
+        {% if predicted_target %}
+            <div class="result">
+                <h2>Predicted Target: {{ predicted_target }}</h2>
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
