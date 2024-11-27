@@ -7,6 +7,10 @@ By leveraging the Ball-by-Ball IT20 dataset, the application provides an estimat
 ## **Dataset**
 The project uses the **[Ball-by-Ball IT20 dataset](https://www.kaggle.com/datasets/jamiewelsh2/ball-by-ball-it20)** from Kaggle.
 
+## **Live Project**
+Access the deployed application here:  
+[T20 Cricket Score Predictor](https://t20-score-prediction-mc92.onrender.com)
+
 ### Key Features of the Dataset:
 - **Detailed Match Information**: Covers runs, dismissals, and more.
 - **Comprehensive Coverage**: Includes players and teams.
