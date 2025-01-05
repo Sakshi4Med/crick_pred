@@ -11,7 +11,7 @@ The project uses the **[Ball-by-Ball IT20 dataset](https://www.kaggle.com/datase
 Access the deployed application here:  
 [T20 Cricket Score Predictor](https://t20-score-prediction-mc92.onrender.com)
 
-### Key Features of the Dataset:
+## Key Features of the Dataset:
 - **Detailed Match Information**: Covers runs, dismissals, and more.
 - **Comprehensive Coverage**: Includes players and teams.
 
@@ -21,12 +21,25 @@ Access the deployed application here:
 - **Real-Time Score Prediction**: Machine learning model predicts the final score dynamically.
 - **User-Friendly Interface**: A sleek web UI for easy use.
 
-### How to Use
-1. **Clone the repository**:
+## Installation
+1. **Clone the repository:**
    ```bash
    git clone https://github.com//cricket_pred.git
-2 **Install required dependencies**:
+2. **Create a virtual environment (optional but recommended):**
+   ```bash
+   python -m venv myenv  
+   myenv/Scripts/activate 
+3. **Install required dependencies:**
    ```bash
    pip install -r requirements.txt
+4. **Run the application:**
+   ```bash
+   python app.py
 
-
+## Contributing
+Contributions are welcome!
+1. Fork this repository.
+2. Create a new branch: git checkout -b feature-branch-name.
+3. Commit your changes: git commit -m 'Add some feature'.
+4. Push to the branch: git push origin feature-branch-name.
+4. Submit a pull request.
