@@ -30,7 +30,7 @@ Access the deployed application here:
 ## Installation
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com//cricket_pred.git
+   git clone https://github.com/Shreyas19-ai/cricket_pred.git
 2. **Create a virtual environment (optional but recommended):**
    ```bash
    python -m venv myenv  
