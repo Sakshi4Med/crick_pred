@@ -21,6 +21,12 @@ Access the deployed application here:
 - **Real-Time Score Prediction**: Machine learning model predicts the final score dynamically.
 - **User-Friendly Interface**: A sleek web UI for easy use.
 
+## **Techstack**
+1. Programming Language - Python
+2. Web Framework - Flask, Gunicorn (used as a WSGI HTTP server for deploying Flask applications)
+3. Libraries - Numpy, Pandas, Sci-kit Learn
+4. Version Control - Git, GitHub, VSCode
+
 ## Installation
 1. **Clone the repository:**
    ```bash
